@@ -41,6 +41,7 @@ urlpatterns = [
     path(
         "password-reset-request/", password_reset_request, name="password_reset_request"
     ),
+    path("register/", register, name="register"),
     path(
         "password-reset-otp-verification/",
         password_reset_otp_verification,

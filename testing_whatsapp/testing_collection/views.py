@@ -68,6 +68,15 @@ def send_otp_via_whatsapp(phone_number, otp_code):
     }
     requests.post(url, json=data, headers=headers)
 
+def register(request):
+    if request.method == "POST":
+        form = CustomUserCreationForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect("login")
+    else:
+        form = CustomUserCreationForm()
+    return render(request, "pages/register.html", {"form": form})
 
 def login(request):
     if request.method == "POST":

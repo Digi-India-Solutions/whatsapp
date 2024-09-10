@@ -5,6 +5,7 @@ from django.contrib.auth import get_user_model
 class CustomUserCreationForm(forms.ModelForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput)
+    
 
     class Meta:
         model = get_user_model()
